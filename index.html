@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/3422698afe.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="heap.js"></script>
+    <script src="script.js" type="module"></script>
+
+    <style>
+        /* Custom styles for the navbar */
+        .navbar-custom {
+            background-color: #34495e; /* Dark Grayish Blue */
+            color: #fff; /* White text */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom h3 {
+            font-weight: bold;
+            margin: 0;
+            padding-left: 15px; /* Add some padding to the left of the brand */
+        }
+
+        /* Custom styles for the buttons */
+        .btn {
+            border-radius: 30px; /* Add rounded corners to the buttons */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-danger {
+            background-color: #e74c3c; /* Red */
+            color: #fff; /* White text */
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b; /* Darker shade of Red */
+            transform: scale(1.05); /* Zoom in effect on hover */
+        }
+
+        .btn-success {
+            background-color: #2ecc71; /* Bright Green */
+            color: #fff; /* White text */
+        }
+
+        .btn-success:hover {
+            background-color: #27ae60; /* Darker shade of Green */
+            transform: scale(1.05); /* Zoom in effect on hover */
+        }
+
+        /* Custom styles for the content */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f8f8f8; /* Light Gray */
+        }
+
+        #container {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content at the top */
+            align-items: center;
+            overflow: hidden; /* Prevent content overflow */
+            padding-top: 30px; /* Add top padding for content */
+            padding-bottom: 60px; /* Add bottom padding for buttons */
+        }
+
+        #mynetwork {
+            width: 100%;
+            height: 70vh;
+            max-width: 100%; /* Ensure network doesn't exceed its container */
+            animation: fadeIn 1s; /* Fade-in effect on load */
+        }
+
+        #temptext {
+            width: 100%;
+            text-align: center;
+            font-size: x-large;
+            animation: fadeIn 1s;
+            padding: 0 20px; /* Add padding to the text container */
+            margin-bottom: 20px; /* Add bottom margin for the text container */
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Custom styles for the buttons container */
+        .buttons-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #34495e; /* Dark Grayish Blue */
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <h3>Cash Flow Minimum Number and Amount of Transactions.</h3>
+        </div>
+    </nav>
+
+    <div id="container">
+        <div id="container2">
+            <span id="temptext">
+                <div>It combines greedy algorithms and graph theory to simplify transactions. You can drag and drop,
+                    resize the problem and solutions with the mouse for better visibility.</div>
+            </span>
+            <div id="mynetwork2" style="display: none"></div>
+        </div>
+        <div id="mynetwork"></div>
+    </div>
+
+    <div class="buttons-container">
+        <button type="button" class="btn btn-danger" id="generate-graph"><i class="fas fa-random"></i> Generate
+            another problem</button>
+        <button type="button" class="btn btn-success ml-3" id="solve"><i class="fas fa-check"></i> Solve</button>
+    </div>
+
+    <!-- Bootstrap JS and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
